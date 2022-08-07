@@ -1,0 +1,34 @@
+<nav class="side-menu-wrapper" *ngIf="showSideMenu">
+  <div class="logo-wrappeer">
+    <a routerLink="">
+      <div class="logo dark auth-centered"></div>
+    </a>
+  </div>
+
+  <ul class="side-menu-items">
+    <li class="menu-item">
+      <a class="menu-link" routerLink="home" routerLinkActive="active">
+        <app-home-icon></app-home-icon>
+        <span class="item-text">Home</span>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="menu-link" routerLink="games" routerLinkActive="active">
+        <app-games-icon></app-games-icon>
+        <span class="item-text">Games</span>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="menu-link" routerLink="analytics" routerLinkActive="active">
+        <app-analytics-icon></app-analytics-icon>
+        <span class="item-text">Analytics</span>
+      </a>
+    </li>
+    <li class="menu-item">
+      <a class="menu-link" routerLink="settings" routerLinkActive="active">
+        <app-settings-icon></app-settings-icon>
+        <span class="item-text">Settings</span>
+      </a>
+    </li>
+  </ul>
+</nav>

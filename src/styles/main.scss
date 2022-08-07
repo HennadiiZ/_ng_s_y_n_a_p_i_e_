@@ -1,0 +1,28 @@
+@import 'dark-theme';
+@import 'typography';
+@import 'layout';
+@import 'logo';
+
+* {
+  box-sizing: border-box;
+  font-family: $brand-font-family !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: $brand-color;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}

@@ -1,0 +1,71 @@
+@import '../../styles/colors';
+
+.side-menu-wrapper {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 110px;
+  background-color: #0F1016;
+
+  .logo-wrappeer {
+    width: 110px;
+    height: 90px;
+
+    .auth-centered {
+      position: relative;
+      width: 80px;
+      height: 40px;
+      display: flex;
+    }
+  }
+
+  .side-menu-items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .menu-item {
+      .menu-link {
+        text-decoration: none;
+        width: 110px;
+        height: 66px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $secondary-text-color !important;
+        transition: all .2s;
+
+        .item-text {
+          font-size: 12px;
+        }
+
+        &.active {
+          background-color: $brand-color;
+
+          ::ng-deep svg {
+            path:not(.transparent) {
+              fill: currentColor;
+            }
+
+            .transparent {
+              stroke: $brand-color;
+              fill: currentColor;
+
+              &.non-filled {
+                fill: $brand-color;
+              }
+            }
+          }
+        }
+
+        &.active,
+        &:hover {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+}

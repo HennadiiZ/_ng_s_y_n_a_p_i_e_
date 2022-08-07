@@ -1,0 +1,60 @@
+@import 'colors';
+@import 'dark-theme';
+
+@mixin basic-input {
+  position: relative;
+  padding: 0 16px;
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $basic-border-color;
+  font-size: 14px;
+  color: $text-default-color;
+  outline: none !important;
+  transition: all .2s;
+
+  &:hover {
+    border-color: $hovered-border-color;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: $brand-color;
+  }
+
+  &.ng-invalid.ng-dirty {
+    border-color: $error-color;
+  }
+}
+
+::ng-deep .mat-checkbox {
+  .mat-checkbox-label {
+    cursor: default;
+  }
+
+  .mat-checkbox-background,
+  .mat-checkbox-frame {
+    border-radius: 5px;
+    border-width: 1px;
+
+    .mat-checkbox-checkmark {
+      padding: 3px 2.5px;
+
+      .mat-checkbox-checkmark-path {
+        stroke-width: 3px;
+      }
+    }
+  }
+
+  &:not(.mat-checkbox-checked) .mat-checkbox-frame {
+    border-color: #252734;
+  }
+
+  &.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+    background-color: $brand-color;
+  }
+}

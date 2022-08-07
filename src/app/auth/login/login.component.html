@@ -1,0 +1,24 @@
+<div class="wrapper-centered flex-column auth-form">
+  <div class="logo dark auth-centered"></div>
+  <h1>Welcome to <span class="brand-underlined">Synaptie</span></h1>
+  <app-input [control]="email" label="Email"></app-input>
+  <app-input [control]="password" [inputType]="'pass'" label="Password"></app-input>
+  <div class="forgot-link">
+    <a [routerLink]="['../forgot-password']">Forgot password?</a>
+  </div>
+  <app-button
+    [callback]="loginByEmail.bind(this)"
+    [disabled]="isInputsHasErrors || isAuthLoading"
+    [loading]="isAuthLoading"
+  >Log in</app-button>
+  <app-or-divider></app-or-divider>
+  <div class="provider-btns">
+    <app-login-with-button (click)="loginByFB()"></app-login-with-button>
+    <div class="btn-divider"></div>
+    <app-login-with-button [isFB]="false" (click)="loginByGoogle()"></app-login-with-button>
+  </div>
+  <span class="signup-msg">Dont’t have an account? <a [routerLink]="['../registration']">Sign up for free</a></span>
+</div>
+
+<img src="../../../assets/img/register/bulb.png" class="background-img img-bottom-left">
+<img src="../../../assets/img/register/dna.png" class="background-img img-top-right">

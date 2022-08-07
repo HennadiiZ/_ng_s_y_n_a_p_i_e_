@@ -1,0 +1,17 @@
+.logo {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &.dark {
+    background-image: url('../assets/svg/logo-dark.svg');
+  }
+
+  &.auth-centered {
+    position: absolute;
+    top: 28px;
+    margin: 0 auto;
+    width: 110px;
+    height: 54px;
+  }
+}

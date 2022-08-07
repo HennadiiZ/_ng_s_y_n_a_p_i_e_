@@ -1,0 +1,47 @@
+<div class="wrapper-centered flex-column auth-form">
+  <div class="logo dark auth-centered"></div>
+
+  <h1>Welcome to <span class="brand-underlined">Synaptie</span></h1>
+  <form [formGroup]="registrationForm">
+    <app-input [control]="getControl('fullName')" label="Full Name"></app-input>
+    <app-input [control]="getControl('email')" label="Email" ></app-input>
+    <app-input [control]="getControl('password')" [inputType]="'pass'" label="Password"></app-input>
+    <app-input [control]="getControl('confirmPassword')" [inputType]="'pass'" label="Repeat Password"></app-input>
+
+    <div class="provider-btns">
+      <app-button
+        [callback]="registerByEmail.bind(this)"
+        [disabled]="registrationForm.invalid || isAuthLoading"
+        [loading]="isAuthLoading"
+      >Register</app-button>
+    </div>
+
+    <span class="custom-checbox">
+      <mat-checkbox color="primary" formControlName="agreeCheckbox">
+        <span>I agree to&nbsp;</span>
+      </mat-checkbox>
+      <a href="">the Terms of use</a>,&nbsp;
+      <a href="">Privacy Policy and disclaimer</a>
+    </span>
+  </form>
+
+  <app-or-divider></app-or-divider>
+
+  <div class="provider-btns">
+    <app-login-with-button
+      [disabled]="!registrationForm.value.agreeCheckbox || isAuthLoading"
+      (click)="registerByFB()"
+    ></app-login-with-button>
+        <div class="btn-divider"></div>
+    <app-login-with-button
+      [isFB]="false"
+      [disabled]="!registrationForm.value.agreeCheckbox || isAuthLoading"
+      (click)="registerByGoogle()"
+    ></app-login-with-button>
+  </div>
+
+  <span class="signup-msg">Already have an account? <a [routerLink]="['../login']"> Log in</a></span>
+</div>
+
+<img src="../../../assets/img/register/bulb.png" class="background-img img-bottom-left">
+<img src="../../../assets/img/register/dna.png" class="background-img img-top-right">

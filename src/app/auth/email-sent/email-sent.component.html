@@ -1,0 +1,15 @@
+<div class="wrapper-centered flex-column auth-form">
+  <div class="logo dark auth-centered"></div>
+  <img src="../../../assets/svg/big-check.svg">
+  <h2>{{ text }}</h2>
+
+  <a routerLink="//auth/login" *ngIf="text !== 'Have not received an email?'">Back to login page</a>
+  <!--  -->
+  <a (click)="resendVerification()" *ngIf="text === 'Have not received an email?'">Send again</a>
+  <!--  -->
+</div>
+
+<img src="../../../assets/img/forgot_password_verification_link/solar_sys.png" class="background-img img-top-left">
+<img src="../../../assets/img/forgot_password_verification_link/plane2.png" class="background-img img-top-right-outlying">
+<img src="../../../assets/img/forgot_password_verification_link/plane1.png" class="background-img img-bottom-left-outlying">
+<img src="../../../assets/img/forgot_password_verification_link/big_plane.png" class="background-img img-bottom-right">

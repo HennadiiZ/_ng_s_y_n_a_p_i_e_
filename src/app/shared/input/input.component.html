@@ -1,0 +1,39 @@
+<div class="input-container">
+  <div *ngIf="label" class="input-label">{{ label }}</div>
+
+  <ng-container [ngSwitch]="inputType">
+
+    <ng-template ngSwitchCase="text">
+      <input type="text" [placeholder]="placeholder" [formControl]="control">
+    </ng-template>
+
+    <ng-template ngSwitchCase="pass">
+      <div class="pass-input">
+        <input
+          [type]="showPass ? 'text' : 'password'"
+          [placeholder]="placeholder"
+          [formControl]="control"
+          autocomplete="new-password"
+        >
+        <div class="show-toggle" (click)="showPass = !showPass">
+          <app-show-icon *ngIf="showPass"></app-show-icon>
+          <app-hide-icon *ngIf="!showPass"></app-hide-icon>
+        </div>
+      </div>
+    </ng-template>
+
+  </ng-container>
+
+  <mat-error [class.hidden]="!control.dirty || !control.errors">
+    <ng-container *ngIf="control.errors && errorKey" [ngSwitch]="errorKey">
+      <ng-template ngSwitchCase="email">Invalid email</ng-template>
+      <ng-template ngSwitchCase="pattern">Passwords didn't match</ng-template>
+      <ng-template ngSwitchCase="required">This field is required</ng-template>
+      <ng-template ngSwitchCase="requiredTrue">This field is required</ng-template>
+      <ng-template ngSwitchCase="minlength">At least {{control.errors[errorKey].requiredLength}} characters</ng-template>
+      <ng-template ngSwitchCase="maxlength">No more than {{control.errors[errorKey].requiredLength}} characters</ng-template>
+      <!-- <ng-template ngSwitchCase="mustMatch">Confirm password must match</ng-template> -->
+    </ng-container>{{ '.' }}
+
+  </mat-error>
+</div>

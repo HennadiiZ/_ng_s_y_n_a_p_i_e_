@@ -1,0 +1,24 @@
+.header {
+  background-color: #0F1016;
+  width: 100%;
+
+  .container {
+    margin: 0 75px;
+  }
+
+  .header-wrapper {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .user-wrapper {
+    cursor: pointer;
+  }
+}
+
+.auth-centered {
+  width: 80px;
+  height: 40px;
+}

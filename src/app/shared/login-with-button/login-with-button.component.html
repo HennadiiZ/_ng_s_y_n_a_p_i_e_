@@ -1,0 +1,10 @@
+<button mat-stroked-button [disabled]="disabled">
+  <ng-container *ngIf="isFB; else google">
+    <img src="../../../assets/svg/facebook.svg" alt="facebook" class="provider">
+    <span>Facebook</span>
+  </ng-container>
+  <ng-template #google>
+    <img src="../../../assets/svg/gmail.svg" alt="gmail" class="provider">
+    <span>Gmail</span>
+  </ng-template>
+</button>

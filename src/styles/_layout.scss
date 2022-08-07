@@ -1,0 +1,66 @@
+@import 'colors';
+
+.wrapper-centered {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.auth-form {
+    padding: 110px 0 50px;
+    min-height: 100vh;
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.mat-snack-bar-container {
+  &.snack-error {
+    background: $error-color;
+    min-width: auto;
+  }
+
+  &.snack-success {
+    background: $brand-color;
+    min-width: auto;
+
+    .mat-simple-snackbar {
+      color: $active-btn-text-color;
+    }
+  }
+
+  .mat-simple-snackbar {
+    font-weight: 600;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.background-img {
+  z-index: -1;
+  position: fixed;
+
+  &.img-top-left {
+    top: 0;
+    left: 0;
+  }
+
+  &.img-top-right {
+    top: 0;
+    right: 0;
+  }
+
+  &.img-bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+
+  &.img-bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+}

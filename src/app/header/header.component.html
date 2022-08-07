@@ -1,0 +1,15 @@
+<header class="header" *ngIf="showUser">
+  <div class="container">
+    <div class="header-wrapper">
+      <div *ngIf="isAuth" class="logo-wrapper">
+        <a routerLink="">
+          <div class="logo dark auth-centered"></div>
+        </a>
+      </div>
+      <div *ngIf="!isAuth" class="breadcrumbs-wrapper"></div>
+      <div class="user-wrapper" title="Log Out" (click)="logOut()">
+        {{ showUser }}
+      </div>
+    </div>
+  </div>
+</header>

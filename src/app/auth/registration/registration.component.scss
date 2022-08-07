@@ -1,0 +1,37 @@
+.forgot-link {
+  width: 410px;
+  max-width: 100%;
+  text-align: right;
+  margin-bottom: 32px;
+}
+
+.provider-btns {
+  width: 410px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.btn-divider {
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.signup-msg {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.custom-checbox {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}

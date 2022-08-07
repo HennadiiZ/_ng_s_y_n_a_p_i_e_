@@ -1,0 +1,57 @@
+@import 'colors';
+
+$brand-font-family: 'Urbanist', sans-serif;
+
+.brand-underlined {
+  display: inline-block;
+  position: relative;
+  color: $brand-color;
+
+  &::after {
+    content: '';
+    background-image: url('../assets/svg/underline.svg');
+    background-size: 100% 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    height: 16px;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+a {
+  color: $brand-color !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.link-secondary {
+    color: $secondary-text-color !important;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.text-secondary {
+  color: $secondary-text-color;
+}

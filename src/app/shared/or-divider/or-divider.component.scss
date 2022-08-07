@@ -1,0 +1,25 @@
+@import '../../../styles/colors';
+
+.divider-container {
+  width: 410px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  user-select: none;
+}
+
+.or-text {
+  color: $disabled-btn-text-color;
+  font-weight: 500;
+  font-size: 14px;
+  flex-grow: 0;
+  padding: 0 7px;
+}
+
+.line {
+  height: 1px;
+  background-color: $basic-border-color;
+  flex-grow: 1;
+}

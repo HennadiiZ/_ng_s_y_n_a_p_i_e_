@@ -1,0 +1,11 @@
+@import '../../../styles/buttons';
+
+:host {
+  display: contents;
+}
+
+button {
+  &.mat-flat-button {
+    @include basic-btn;
+  }
+}

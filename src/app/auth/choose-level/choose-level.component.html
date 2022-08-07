@@ -1,0 +1,53 @@
+<div class="wrapper-centered flex-column level-selector">
+  <h1>What is your <span class="brand-underlined">level of knowledge?</span></h1>
+  <div class="cards">
+    <ng-container *ngFor="let levelItem of levels; let idx = index">
+      <div
+        class="cards__item"
+        [class.selected]="levelItem.selected"
+        (click)="handleLevelSelect(idx)"
+      >
+        <p class="item-header">{{ levelItem.title }}</p>
+
+        <div class="item-content">
+          <div class="item">
+            <div class="item-icon">
+              <img src="../../../assets/img/choose-level-icons/command.svg" alt="command-icon">
+            </div>
+            <small class="item-text">
+              Association<br>
+              <span>None</span>
+            </small>
+          </div>
+          <div class="item">
+            <div class="item-icon">
+              <img src="../../../assets/img/choose-level-icons/teacher.svg" alt="teacher-icon">
+            </div>
+            <small class="item-text">
+              Subject<br>
+              <span>None</span>
+            </small>
+          </div>
+        </div>
+
+        <div class="item-footer">
+          <div class="item-icon">
+            <img src="../../../assets/img/choose-level-icons/CircleWavyCheck.svg" alt="tick-icon">
+          </div>
+          <small class="item-footer__text">{{ levelItem.description }}</small>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <app-button
+    [disabled]="!selectedLevel || isLoading"
+    [loading]="isLoading"
+    [callback]="onFinish.bind(this)"
+  >Finish</app-button>
+</div>
+
+<img src="../../../assets/img/Choose_a_library/dna.png" class="background-img img-bottom-left">
+<img src="../../../assets/img/Choose_a_library/test_tube.png" class="background-img img-top-right">
+
+<img src="../../../assets/img/Choose_a_library/magnet.png" class="background-img img-top-left">
+<img src="../../../assets/img/Choose_a_library/abc.png" class="background-img img-bottom-right">

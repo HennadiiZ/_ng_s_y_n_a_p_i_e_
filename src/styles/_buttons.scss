@@ -1,0 +1,70 @@
+@import 'colors';
+@import 'typography';
+@import 'dark-theme';
+
+@mixin basic-btn {
+  width: 100%;
+  max-width: 410px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: $brand-color;
+  color: $active-btn-text-color;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #6F86FF;
+  }
+
+  &:focus {
+    background-color: #405BEE;
+    box-shadow: 0px 0px 0px 4px #1D223C;
+  }
+
+  &:active {
+    background-color: #405BEE;
+  }
+
+  &:disabled {
+    background-color: #262835;
+    color: $disabled-btn-text-color;
+  }
+
+  &.loading {
+    @keyframes spinner {
+      to {transform: rotate(360deg);}
+    }
+
+    ::ng-deep .mat-button-wrapper::after {
+      content: '';
+      box-sizing: border-box;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      left: 10px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 3px solid $brand-color;
+      border-top-color: $basic-border-color;
+      animation: spinner .7s linear infinite;
+    }
+  }
+}
+
+@mixin provider-btn {
+  width: 195px;
+  height: 56px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $basic-border-color;
+  background-color: $background-main-color;
+  transition: all .2s;
+
+  &:hover {
+    border-color: $brand-color;
+    background-color: $stroked-button-hover-bgnd;
+  }
+}

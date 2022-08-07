@@ -1,0 +1,28 @@
+@import '../../../styles/buttons';
+@import '../../../styles/colors';
+
+:host {
+  display: contents;
+}
+
+button {
+  &.mat-stroked-button {
+    @include provider-btn;
+    &:disabled {
+      color: $disabled-btn-text-color;
+      pointer-events: none;
+    }
+  }
+}
+
+span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.provider {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+

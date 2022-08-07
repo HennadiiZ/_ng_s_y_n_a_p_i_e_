@@ -1,0 +1,57 @@
+@import '../../../styles/inputs';
+
+:host {
+  display: contents;
+}
+
+.input-container {
+  position: relative;
+  width: 410px;
+  max-width: 100%;
+
+  .input-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  input {
+    @include basic-input;
+  }
+
+  .pass-input {
+    position: relative;
+
+    .show-toggle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 16px;
+      bottom: 11px;
+      color: $basic-border-color;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    &:hover .show-toggle {
+      color: $hovered-border-color;
+    }
+
+    &:focus-within .show-toggle {
+      color: $brand-color;
+    }
+  }
+
+  input.ng-invalid.ng-dirty + .show-toggle {
+    color: $brand-color;
+  }
+
+  mat-error {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
